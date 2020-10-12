@@ -1,0 +1,32 @@
+.Footer {
+  background-color: #ededed;
+  padding: 12px 3% 50px;
+  .FtNav {
+    li {
+      margin-top: 2px;
+      &:first-child {
+        margin-top: 0;
+      }
+      a {
+        display: block;
+        height: 35px;
+        line-height: 35px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #888;
+        text-align: center;
+      }
+    }
+  }
+  .Address {
+    padding: 2.5% 1% 0;
+    span {
+      display: block;
+      line-height: 24px;
+      font-size: 1rem;
+      color: #84868a;
+      font-family: 'Nanum Gothic';
+    }
+  }
+}

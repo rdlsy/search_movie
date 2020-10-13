@@ -20,9 +20,11 @@ function LiveRank() {
 
   return (
     <article className="LiveRank">
-      <h2 className="SubTitle">실시간랭킹</h2>
-      <div className="LiveRankWrap">
-        <RankList rank={rank} />
+      <div className="inner">
+        <h2 className="SubTitle">실시간랭킹</h2>
+        <div className="LiveRankWrap">
+          <RankList rank={rank} />
+        </div>
       </div>
     </article >
   );

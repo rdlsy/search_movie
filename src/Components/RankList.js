@@ -3,7 +3,6 @@ import RankListItem from './RankListItem';
 import RankPoster from './RankPoster';
 
 function RankList({ rank }) {
-
   const rankList = () => {
     const array = [];
     rank.map((item, index) => {
@@ -12,7 +11,7 @@ function RankList({ rank }) {
         name: item.movieNm,
         active: false
       });
-    })
+    });
     const list = array.slice(0, 6);
     return list;
   }

@@ -1,27 +1,53 @@
 import React, { useState } from 'react';
 import SliderListItem from './SliderListItem';
+import Slider from 'react-slick';
 
 function SliderList({ data }) {
   const sliderList = () => {
-    const rwArray = [];
+    const array = [];
     data.map((item, index) => {
-      rwArray.push({
+      array.push({
         id: index + 1,
-        name: item.movieNm
+        name: item.movieNm,
+        openDt: item.openDt
       });
     });
-    return rwArray;
+    const list = array.slice(0, 6);
+    return list;
   }
   const [sliderItem, setSliderItem] = useState(sliderList);
 
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1175,
+        settings: {
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 540,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+    ]
+  }
+
   return (
     <div className="SliderList">
-      {sliderItem.map(movie => (
-        <SliderListItem
-          key={movie.id}
-          movie={movie}
-        />
-      ))}
+      <Slider {...settings}>
+        {sliderItem.map(movie => (
+          <SliderListItem
+            key={movie.id}
+            movie={movie}
+          />
+        ))}
+      </Slider>
     </div>
   );
 }

@@ -23,7 +23,7 @@ blockquote:before, blockquote:after,q:before, q:after {content: '';content: none
 table {border-collapse: collapse;border-spacing: 0;}
 input[type="submit"] {cursor: pointer;}
 input[type="text"], input[type="password"], textarea{border: 1px solid #aeaeae;}
-input[type="text"], input[type="password"]{font-family: 'Malgun Gothic','맑은고딕';}
+input[type="password"]{font-family: 'Malgun Gothic','맑은고딕';}
 input[type=text]::-ms-clear, input[type=password]::-ms-clear{display: none;} 
 input:-webkit-autofill{-webkit-box-shadow: 0 0 0 30px #fff inset;-webkit-text-fill-color: #000;}
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {transition: background-color 5000s ease-in-out 0s; }

@@ -1,8 +1,8 @@
 import React from 'react';
 import { useAsync } from 'react-async';
-import '../css/LiveRank.scss';
 import api from '../api';
 import RankList from './RankList';
+import '../css/LiveRank.scss';
 
 async function getRank() {
   const response = await api.fetchData();

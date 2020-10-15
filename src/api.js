@@ -51,6 +51,7 @@ const api = {
   fetchPoster: (name) => {
     return request(`${config2.API_ENDPOINT}&detail=Y&title=${name}&ServiceKey=${config2.KEY}`)
   }
+
 }
 
 export default api;

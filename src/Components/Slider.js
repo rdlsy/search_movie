@@ -2,11 +2,12 @@ import React from 'react';
 import { useAsync } from 'react-async';
 import api from '../api';
 import SliderList from './SliderList';
+import '../css/Slider.scss';
 
 async function getRankWeek() {
-  const rwResponse = await api.fetchDataWeek();
-  const rwResult = rwResponse.data.boxOfficeResult.weeklyBoxOfficeList;
-  return rwResult;
+  const response = await api.fetchDataWeek();
+  const result = response.data.boxOfficeResult.weeklyBoxOfficeList;
+  return result;
 }
 
 function Slider() {

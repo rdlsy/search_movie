@@ -6,7 +6,7 @@ import LiveRank from './LiveRank';
 function Container() {
   return (
     <section className="Content">
-      <Slider />
+      {/* <Slider /> */}
       <LiveRank />
     </section>
   );

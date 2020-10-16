@@ -9,10 +9,11 @@ function RankListItem({ movies }) {
           style={{ cursor: 'pointer' }}
         >
           <span className="Title">
-            {movie.id + '.' + (movie.rankOldAndNew === 'NEW' ? <span className="Type">NEW</span> : '')}
+            {movie.id + '.'}
             <span className="Name">{movie.name}</span>
+            {(movie.rankOldAndNew === 'NEW') ? <span className="Type">NEW</span> : ''}
           </span>
-          <span className="Count">{movie.audiAcc}명</span>
+          <span className="Count">{movie.openDt}</span>
         </li>
       ))
       }

@@ -9,13 +9,10 @@ const config2 = {
   KEY: '229UV0UP2N545R3W7SN2'
 }
 const config3 = {
-  API_ENDPOINT: 'http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json',
-  KEY: '664383b11fdaa853a4884a63b0ae7cc4'
+  API_ENDPOINT: 'https://www.filecity.co.kr/module/top100_test.php'
 }
 
 let today = new Date();
-let week = today.setDate(today.getDate() - 2);
-week = new Date(week);
 
 const setDate = (targetDate) => {
   let targetDt;
@@ -28,6 +25,20 @@ const setDate = (targetDate) => {
   return targetDt;
 }
 
+let formData = new FormData();
+formData.append('tab', 'top100');
+formData.append('tab2', 'BD_ALL');
+formData.append('s_value', '');
+formData.append('no_adult', 0);
+formData.append('view', 'post');
+formData.append('limit', 20);
+formData.append('no_overlap', 0);
+formData.append('down_chk', 0);
+formData.append('sale', 0);
+formData.append('sale2', 0);
+formData.append('year', 0);
+formData.append('poster_chk', 0);
+
 const request = async (url) => {
   try {
     const result = await axios.get(url);
@@ -38,20 +49,34 @@ const request = async (url) => {
   }
 }
 
+const request2 = async (url, form) => {
+  try {
+    const result = await axios
+      .post(url, form)
+      .then(response => {
+        JSON.stringify(response, null, 2);
+        return response.data.list;
+      })
+    return result;
+  } catch (error) {
+    alert(error.msg);
+    return { data: null };
+  }
+}
+
 const api = {
-  //실시간 랭킹
+  //실시간 랭킹 (일별 박스오피스)
   fetchData: () => {
     return request(`${config1.API_ENDPOINT}?key=${config1.KEY}&targetDt=${setDate(today)}`);
-  },
-  //주간 랭킹
-  fetchDataWeek: () => {
-    return request(`${config3.API_ENDPOINT}?key=${config1.KEY}&targetDt=${setDate(week)}`);
   },
   //포스터
   fetchPoster: (name) => {
     return request(`${config2.API_ENDPOINT}&detail=Y&title=${name}&ServiceKey=${config2.KEY}`)
+  },
+  //실시간 랭킹 (파일시티)
+  fetchRankCity: () => {
+    return request2(`${config3.API_ENDPOINT}`, formData);
   }
-
 }
 
 export default api;

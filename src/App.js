@@ -1,27 +1,16 @@
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Header from './Components/Header';
-import Container from './Components/Container';
-import Footer from './Components/Footer';
-import SearchResult from './Components/SearchResult';
+import Main from './Components/Main';
+import Search from './Components/Search';
 import './App.css';
 
 function App() {
-  const [movies, setMovies] = useState('');
-  const onInsert = useCallback(
-    (title) => {
-      setMovies(title);
-    }, [movies]
-  );
-
   return (
     <div className="App">
-      <Header onInsert={onInsert} />
       <Switch>
-        <Route path="/" exact={true} component={Container} />
-        <Route path="/search" component={SearchResult} movies={movies} />
+        <Route path="/" exact={true} component={Main} />
+        <Route path="/search" component={Search} />
       </Switch>
-      <Footer />
     </div>
   );
 }

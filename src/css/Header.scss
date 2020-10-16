@@ -54,37 +54,4 @@ $on: active;
     height: 55px;
     background: url('/img/btn_search_mb.png') no-repeat center;
   }
-  .SearchWrap {
-    display: none;
-    position: absolute;
-    bottom: -61px;
-    left: 0;
-    padding: 9px 8px 8px;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background-color: #fd3d46;
-    box-sizing: border-box;
-    input {
-      width: 100%;
-      height: 44px;
-      padding: 0 15px;
-      border: none;
-      border-radius: 10px;
-      font-size: 1.2rem;
-    }
-    button {
-      position: absolute;
-      right: 8px;
-      top: 9px;
-      width: 46px;
-      height: 44px;
-      background: url('/img/total_search.png') no-repeat center;
-      background-size: 22px;
-    }
-    &.#{$on} {
-      display: flex;
-    }
-  }
-  
 }

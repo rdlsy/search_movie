@@ -4,15 +4,14 @@ import api from '../api';
 import SliderList from './SliderList';
 import '../css/Slider.scss';
 
-async function getRankWeek() {
-  const response = await api.fetchDataWeek();
-  const result = response.data.boxOfficeResult.weeklyBoxOfficeList;
-  return result;
+async function getRankCity() {
+  const response = await api.fetchRankCity();
+  return response;
 }
 
 function Slider() {
-  const { data: rankWeek, error, isLoading } = useAsync({
-    promiseFn: getRankWeek,
+  const { data: rankcity, error, isLoading } = useAsync({
+    promiseFn: getRankCity,
   });
 
   if (isLoading) return <div></div>;
@@ -21,7 +20,7 @@ function Slider() {
   return (
     <article className="Slider">
       <div className="SliderWrap">
-        <SliderList data={rankWeek} />
+        <SliderList data={rankcity} />
       </div>
     </article >
   );

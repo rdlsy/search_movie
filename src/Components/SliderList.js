@@ -8,11 +8,15 @@ function SliderList({ data }) {
     data.map((item, index) => {
       array.push({
         id: index + 1,
-        name: item.movieNm,
-        openDt: item.openDt
+        name: item.real_title,
+        imgSrc: item.main_img,
+        cate: item.cate_h
       });
     });
-    const list = array.slice(0, 6);
+    let list = array.filter(n => {
+      return n.name;
+    })
+    list = list.splice(0, 10);
     return list;
   }
   const [sliderItem, setSliderItem] = useState(sliderList);

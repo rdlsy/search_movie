@@ -12,6 +12,7 @@ function SliderList({ data }) {
         imgSrc: item.main_img,
         cate: item.cate_h
       });
+      return array;
     });
     let list = array.filter(n => {
       return n.name;
@@ -19,7 +20,7 @@ function SliderList({ data }) {
     list = list.splice(0, 10);
     return list;
   }
-  const [sliderItem, setSliderItem] = useState(sliderList);
+  const [sliderItem] = useState(sliderList);
 
   const settings = {
     infinite: true,

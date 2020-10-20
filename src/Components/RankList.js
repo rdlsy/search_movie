@@ -8,15 +8,15 @@ function RankList({ rank }) {
         id: index + 1,
         name: item.movieNm,
         rankOldAndNew: item.rankOldAndNew,
-        //audiAcc: item.audiAcc,
         openDt: item.openDt
       });
+      return array;
     });
     const list = array.slice(0, 6);
     return list;
   }
 
-  const [movies, setMovies] = useState(rankList);
+  const [movies] = useState(rankList);
 
   return (
     <>

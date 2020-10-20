@@ -4,7 +4,7 @@ function SliderListItem({ movie }) {
   const { name, imgSrc, cate } = movie;
   return (
     <>
-      <img src={imgSrc} />
+      <img src={imgSrc} alt={name} />
       <dl className="SliderItem">
         <dt>{name}</dt>
         <dd>{cate}</dd>

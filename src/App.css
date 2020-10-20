@@ -35,3 +35,78 @@ button{font-size:0;border:0;background:none;padding:0;cursor:pointer;font-family
 button:focus, select:focus{outline: none;}
 button span{position: relative;}
 select::-ms-expand{display: none;}
+
+.Loading {position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);display: flex;width: 84px;height: 20px;text-align: center;justify-content: center;align-items: center;}
+.Loading span{position: absolute;display: block;margin: 0 5px;display: inline-block;width: 20px;height: 20px;border-radius: 50%;}
+.Loading span.l1{left: 0;background-color: #f8b26a;animation: loading1 0.8s linear infinite;}
+.Loading span.l2{left: 30px;background-color: #abbd81;animation: loading2 0.8s linear infinite;}
+.Loading span.l3{left: 60px;background-color: #e15b64;animation: loading3 0.8s linear infinite;}
+
+@keyframes loading1 {
+  0% {
+    left: 0;
+    transform: scale(0);
+  }
+  25% {
+    left: 0;
+    transform: scale(1);
+  }
+  50% {
+    left: 30px;
+    transform: scale(1);
+  }
+  75% {
+    left: 60px;
+    transform: scale(1);
+  }
+  100% {
+    left: 60px;
+    transform: scale(0);
+  }
+}
+
+@keyframes loading2 {
+  0% {
+    left: 30px;
+    transform: scale(1);
+  }
+  25% {
+    left: 60px;
+    transform: scale(1);
+  }
+  50% {
+    left: 60px;
+    transform: scale(0); 
+  }
+  75% {
+    left: 0;
+    transform: scale(0);
+  }
+  100% {
+    left: 30px;
+    transform: scale(1);
+  }
+}
+
+@keyframes loading3 {
+  0% {
+    left: 60px;
+    transform: scale(0);
+  }
+  25% {
+    left: 0;
+    transform: scale(0);
+  }
+  50% {
+    left: 0;
+    transform: scale(1); 
+  }
+  75% {
+    left: 30px;
+    transform: scale(1);
+  }
+  100% {
+    left: 60px;
+    transform: scale(1);
+  }
+}

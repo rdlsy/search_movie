@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 
-function SearchInput({ onInsert }) {
+function SearchInput({ onInsert, history }) {
   const [value, setValue] = useState('');
   const searchInput = useRef();
 
   const onChange = useCallback(
     e => {
       setValue(e.target.value);
-    }, [value]
+    }, []
   );
   const onSubmit = useCallback(
     e => {
@@ -19,11 +19,15 @@ function SearchInput({ onInsert }) {
 
     }, [onInsert, value]
   );
+  const goHome = () => {
+    history.push('/')
+  }
   useEffect(() => {
     searchInput.current.focus();
   }, []);
   return (
     <div className="SearchWrap">
+      <button type="button" className="BackBtn" onClick={goHome}><span></span><span></span></button>
       <form onSubmit={onSubmit}>
         <input type="text" placeholder="검색어를 입력하세요." onChange={onChange} value={value} ref={searchInput} />
         <button type="submit">검색</button>

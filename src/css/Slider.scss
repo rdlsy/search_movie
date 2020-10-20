@@ -43,6 +43,8 @@
     z-index: 1;
   }
   .SliderItem {
+    margin: 0 auto;
+    width: 164px;
     padding-top: 10px;
     dt {
       font-size: 1.2rem;
@@ -54,6 +56,11 @@
     dd {
       font-size: 1.1rem;
       color: #8d8d8d;
+    }
+  }
+  @media screen and (max-width: 370px) {
+    .SliderItem {
+      width: 140px;
     }
   }
 }

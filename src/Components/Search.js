@@ -3,15 +3,17 @@ import SearchInput from './SearchInput';
 import SearchResult from './SearchResult';
 import '../css/Search.scss'
 
-function Search({ location }) {
-  const [movie, setMovie] = useState('');
+function Search({ history }) {
+  const [movie, setMovie] = useState(null);
   const onInsert = useCallback((title) => {
     setMovie(title);
   }, []);
   return (
     <section className="SearchArea">
-      <SearchInput onInsert={onInsert} />
-      <SearchResult movie={movie} />
+      <SearchInput onInsert={onInsert} history={history} />
+      {(movie) ?
+        <SearchResult movie={movie} /> : ''
+      }
     </section>
   );
 }

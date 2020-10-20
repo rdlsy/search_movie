@@ -15,7 +15,7 @@ function LiveRank() {
     promiseFn: getRank,
   });
 
-  if (isLoading) return <div></div>;
+  if (isLoading) return <div className="Loading"><span></span></div>;
   if (error) return <div>에러가 발생했습니다</div>;
 
   return (

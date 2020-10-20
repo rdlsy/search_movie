@@ -69,9 +69,9 @@ const api = {
   fetchData: () => {
     return request(`${config1.API_ENDPOINT}?key=${config1.KEY}&targetDt=${setDate(today)}`);
   },
-  //포스터
+  //통합검색
   fetchPoster: (name) => {
-    return request(`${config2.API_ENDPOINT}&detail=Y&title=${name}&ServiceKey=${config2.KEY}`)
+    return request(`${config2.API_ENDPOINT}&detail=Y&title=${name}&type=극영화&ServiceKey=${config2.KEY}`)
   },
   //실시간 랭킹 (파일시티)
   fetchRankCity: () => {

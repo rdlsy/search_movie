@@ -19,8 +19,6 @@ function SearchResult({ movie }) {
   if (isLoading) return <div className="Loading"><span className="l1"></span><span className="l2"></span><span className="l3"></span></div>;
   if (error) return <div>에러가 발생했습니다</div>;
 
-  console.log(movies);
-
   return (
     <>
       {

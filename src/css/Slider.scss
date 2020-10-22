@@ -17,13 +17,13 @@
     position: inherit;
   }
   .slick-prev {
-    background-image: url('/img/arrow_left.png');
+    background-image: url('/movie_site/img/arrow_left.png');
     &::before {
       display: none;
     }
   }
   .slick-next {
-    background-image: url('/img/arrow_right.png');
+    background-image: url('/movie_site/img/arrow_right.png');
     &::before {
       display: none;
     }

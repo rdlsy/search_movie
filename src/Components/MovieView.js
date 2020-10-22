@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../css/MovieView.scss';
 
 function MovieView({ closePopup, info }) {
@@ -11,7 +12,7 @@ function MovieView({ closePopup, info }) {
         <video controls width="100%">
           <source src={info.url} type="video/mp4" />
         </video>
-        <a href={link} className="goLink" target="_blank">파일시티 이동</a>
+        <Link to={link} className="goLink" target="_blank">파일시티 이동</Link>
       </div>
     </div>
   );

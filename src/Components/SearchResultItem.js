@@ -5,7 +5,7 @@ function SearchResultItem({ movie }) {
   const poster = posters.split('|')[0];
   const director = directors.director[0].directorNm;
   const actor = actors.actor.splice(0, 5);
-  const noImage = '/img/noimage.gif';
+  const noImage = '/movie/img/noimage.gif';
   let real_title = title.replaceAll(' !HS ', '');
   real_title = real_title.replaceAll(' !HE ', '');
   let real_repRlsDate = repRlsDate.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3');

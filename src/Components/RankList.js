@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import RankListItem from './RankListItem';
-function RankList({ rank }) {
+
+function RankList({ rank, history }) {
   const rankList = () => {
     const array = [];
     rank.map((item, index) => {
@@ -8,20 +9,22 @@ function RankList({ rank }) {
         id: index + 1,
         name: item.movieNm,
         rankOldAndNew: item.rankOldAndNew,
-        openDt: item.openDt
+        rankInten: item.rankInten,
+        audiCnt: item.audiCnt
       });
       return array;
     });
-    const list = array.slice(0, 6);
-    return list;
+    return array;
   }
 
   const [movies] = useState(rankList);
 
   return (
-    <>
-      <RankListItem movies={movies} />
-    </>
+    <ol className="List">
+      {movies.map((movie, index) => (
+        <RankListItem key={index} movie={movie} history={history} />
+      ))}
+    </ol>
   );
 }
 

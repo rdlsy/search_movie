@@ -1,21 +1,20 @@
 import React from 'react';
 
 function SearchResultItem({ movie }) {
-  console.log(movie);
   const { title, posters, type, nation, runtime, repRlsDate, titleEng, prodYear, rating, company, directors, actors } = movie;
   const poster = posters.split('|')[0];
   const director = directors.director[0].directorNm;
   const actor = actors.actor.splice(0, 5);
   const noImage = '/img/noimage.gif';
-  let real_title = title.replace(' !HS ', '');
-  real_title = real_title.replace(' !HE ', '');
+  let real_title = title.replaceAll(' !HS ', '');
+  real_title = real_title.replaceAll(' !HE ', '');
   let real_repRlsDate = repRlsDate.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3');
   return (
     <div className="Movie">
       <div className="Inner">
         <div className="Movie_Title">
-          {real_title}<br />
-          <span>{titleEng + '·' + prodYear + '년'}</span>
+          {real_title}
+          <span>{titleEng + ' · ' + prodYear + '년'}</span>
         </div>
         <div className="Movie_Info">
           <ul className="Movie_Info_List">

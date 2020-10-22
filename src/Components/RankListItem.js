@@ -1,23 +1,34 @@
 import React from 'react';
 
-function RankListItem({ movies }) {
+function RankListItem({ movie, history }) {
+  const { id, name, rankOldAndNew, rankInten, audiCnt } = movie;
+  const rankIn = Math.abs(rankInten);
+  const searchMovie = (name) => {
+    history.push(`/search?title=${name}`);
+  }
+  const test = (a, b) => {
+    let type;
+    if (a === 'NEW') {
+      type = 'New';
+    } else if (b < 0) {
+      type = 'Down';
+    } else if (b > 0) {
+      type = 'Up';
+    } else {
+      type = 'Minus'
+    }
+    return type;
+  }
+
   return (
-    <ol className="List">
-      {movies.map((movie, index) => (
-        <li
-          key={index}
-          style={{ cursor: 'pointer' }}
-        >
-          <span className="Title">
-            {movie.id + '.'}
-            <span className="Name">{movie.name}</span>
-            {(movie.rankOldAndNew === 'NEW') ? <span className="Type">NEW</span> : ''}
-          </span>
-          <span className="Count">{movie.openDt}</span>
-        </li>
-      ))
-      }
-    </ol>
+    <li onClick={() => searchMovie(movie.name)}>
+      <span className="Title">
+        {id + '.'}
+        <span className="Name">{name}</span>
+        <span className={test(rankOldAndNew, rankInten)}>{(!(rankIn === 0)) ? rankIn : ''}</span>
+      </span>
+      <span className="Count">{audiCnt}명</span>
+    </li>
   );
 }
 

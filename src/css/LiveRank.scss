@@ -1,10 +1,18 @@
 .LiveRank {
   padding: 10px;
   .inner {
+    position: relative;
+    max-width: 1500px;
+    height: 430px;
+    margin: 0 auto;
     padding: 20px;
     border: 1px solid #d5d8de;
+    box-sizing: border-box;
     .SubTitle {
       margin-bottom: 20px;
+      span {
+        font-size: 1.2rem;
+      }
     }
     .LiveRankWrap {
       display: flex;
@@ -20,6 +28,7 @@
           border-top: 1px solid #e5e5e5;
           font-size: 1.1rem;
           color: #181818;
+          cursor: pointer;
           &:first-child {
             border-top: 0;
           }
@@ -35,11 +44,41 @@
             overflow: hidden;
             white-space: nowrap;
           }
-          .Type {
+          .Minus {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
             margin: 0 5px 0 10px;
-            font-size: 0.8rem;
+            background: url(/img/ico_minus.png) no-repeat;
+          }
+          .Down {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            padding-left: 15px;
+            margin: 0 5px 0 10px;
+            background: url(/img/ico_dw.png) no-repeat;
+            font-size: 0.9rem;
             font-weight: 700;
-            color: #e7241d;
+            color: #6d6d6d;
+          }
+          .Up {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            padding-left: 15px;
+            margin: 0 5px 0 10px;
+            background: url(/img/ico_up.png) no-repeat;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #d40083;
+          }
+          .New {
+            display: inline-block;
+            width: 24px;
+            height: 12px;
+            margin: 0 5px 0 10px;
+            background: url(/img/ico_new.png) no-repeat center;
           }
           .Count {
             margin-left: auto;
@@ -51,15 +90,9 @@
           }
         }
       }
-      .Loading {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50%;
-        padding-left: 5%;
-        width: 155px;
-        height: 213px;
-      }
+    }
+    .Loading {
+      position: absolute;
     }
   }
 }

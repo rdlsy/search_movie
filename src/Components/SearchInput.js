@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 
-function SearchInput({ onInsert, history }) {
+function SearchInput({ onInsert, history, query }) {
   const [value, setValue] = useState('');
   const searchInput = useRef();
 
@@ -15,16 +15,15 @@ function SearchInput({ onInsert, history }) {
       if (value) {
         onInsert(value);
       }
-      setValue('');
-
     }, [onInsert, value]
   );
   const goHome = () => {
     history.push('/')
   }
   useEffect(() => {
+    if (query.title) setValue(query.title);
     searchInput.current.focus();
-  }, []);
+  }, [query]);
   return (
     <div className="SearchWrap">
       <button type="button" className="BackBtn" onClick={goHome}><span></span><span></span></button>

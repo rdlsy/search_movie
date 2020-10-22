@@ -10,20 +10,27 @@ async function getRank() {
   return result;
 }
 
-function LiveRank() {
+function LiveRank({ history }) {
   const { data: rank, error, isLoading } = useAsync({
     promiseFn: getRank,
   });
 
-  if (isLoading) return <div className="Loading"><span></span></div>;
-  if (error) return <div>에러가 발생했습니다</div>;
+  if (error) return <div>에러가 발생했습니다.</div>;
 
   return (
     <article className="LiveRank">
       <div className="inner">
-        <h2 className="SubTitle">실시간랭킹</h2>
+        <h2 className="SubTitle">실시간랭킹 <span>(일별 박스오피스)</span></h2>
         <div className="LiveRankWrap">
-          <RankList rank={rank} />
+          {
+            (isLoading) ?
+              <div className="Loading">
+                <span className="l1"></span>
+                <span className="l2"></span>
+                <span className="l3"></span>
+              </div> :
+              <RankList rank={rank} history={history} />
+          }
         </div>
       </div>
     </article >

@@ -1,17 +1,16 @@
+@import './mixin';
+
 .Slider {
   padding: 30px 0;
+  .SliderWrap {
+    max-width: 1500px;
+    margin: 0 auto;
+  }
   .slick-slide {
     text-align: center;
+    cursor: pointer;
     img {
       display: inline-block;
-      width: 164px;
-      height: 223px;
-    }
-    @media screen and (max-width: 370px) {
-      img {
-        width: 140px;
-        height: 190px;
-      }
     }
   }
   .slick-dots {
@@ -19,32 +18,25 @@
   }
   .slick-prev {
     background-image: url('/img/arrow_left.png');
-    left: 5%;
     &::before {
       display: none;
     }
   }
   .slick-next {
     background-image: url('/img/arrow_right.png');
-    right: 5%;
     &::before {
       display: none;
     }
   }
   .slick-prev, .slick-next {
-    margin-top: -24px;
-    width: 40px;
-    height: 40px;
     background-color: rgba(0,0,0,.7);
     background-repeat: no-repeat;
-    background-size: 12px;
     background-position: center;
     border-radius: 50%;
     z-index: 1;
   }
   .SliderItem {
     margin: 0 auto;
-    width: 164px;
     padding-top: 10px;
     dt {
       font-size: 1.2rem;
@@ -58,7 +50,80 @@
       color: #8d8d8d;
     }
   }
-  @media screen and (max-width: 370px) {
+}
+
+@include desktop {
+  .Slider {
+    .slick-slide {
+      img {
+        width: 285px;
+        height: 388px;
+      }
+    }
+    .slick-prev {
+      left: 6%;
+    }
+    .slick-next {
+      right: 6%;
+    }
+    .slick-prev, .slick-next {
+      margin-top: -37px;
+      width: 75px;
+      height: 75px;
+      background-size: 24px;
+    }
+    .SliderItem {
+      width: 164px;
+    }
+  }
+}
+
+@include tablet {
+  .Slider {
+    .slick-slide {
+      img {
+        width: 164px;
+        height: 223px;
+      }
+    }
+    .slick-prev {
+      left: 2.5%;
+    }
+    .slick-next {
+      right: 2.5%;
+    }
+    .slick-prev, .slick-next {
+      margin-top: -24px;
+      width: 40px;
+      height: 40px;
+      background-size: 12px;
+    }
+    .SliderItem {
+      width: 164px;
+    }
+  }
+}
+
+@include mobile {
+  .Slider {
+    .slick-slide {
+      img {
+        width: 140px;
+        height: 190px;
+      }
+    }
+    .slick-prev {
+      left: 5%;
+    }
+    .slick-next {
+      right: 5%;
+    }
+    .slick-prev, .slick-next {
+      margin-top: -24px;
+      width: 40px;
+      height: 40px;
+      background-size: 12px;
+    }
     .SliderItem {
       width: 140px;
     }

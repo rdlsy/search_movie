@@ -1,57 +1,142 @@
-$on: active;
+@import './mixin';
 
 .Header {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   width: 100%;
-  height: 55px;
   border-bottom: 1px solid #f63d46;
   .Logo{
-    width: 91px;
-    height: 35px;
     background: url('/img/m_logo.png') no-repeat;
-    background-size: 91px 35px;
     a {
       text-indent: -9999px;
     }
   }
   .MenuBtn {
-    width: 40px;
-    height: 56px;
     span {
       position: relative;
       display: inline-block;
-      width: 21px;
-      height: 3px;
       background-color: #989898;
       &::before {
         content: '';
         position: absolute;
-        top: -7px;
         left: 0;
         display: inline-block;
-        width: 21px;
-        height: 3px;
         background-color: #989898;
       }
       &::after {
         content: '';
         position: absolute;
-        bottom: -7px;
         left: 0;
         display: inline-block;
-        width: 21px;
-        height: 3px;
         background-color: #989898;
       }
     }
   }
   .SearchBtn {
-    margin-left: auto;
-    width: 51px;
-    height: 55px;
     background: url('/img/btn_search_mb.png') no-repeat center;
   }
 }
+
+@include mobile {
+  .Header {
+    height: 50px;
+    .Logo{
+      width: 74px;
+      height: 30px;
+      background-size: 74px 30px;
+    }
+    .MenuBtn {
+      width: 50px;
+      height: 50px;
+      span {
+        width: 24px;
+        height: 2px;
+        &::before {
+          top: -7px;
+          width: 24px;
+          height: 2px;
+        }
+        &::after {
+          bottom: -7px;
+          width: 24px;
+          height: 2px;
+        }
+      }
+    }
+    .SearchBtn {
+      width: 51px;
+      height: 50px;
+      background-size: 42%;
+    }
+  }
+}
+
+@include tablet {
+  .Header {
+    height: 50px;
+    .Logo{
+      width: 74px;
+      height: 30px;
+      background-size: 74px 30px;
+    }
+    .MenuBtn {
+      width: 50px;
+      height: 50px;
+      span {
+        width: 24px;
+        height: 2px;
+        &::before {
+          top: -7px;
+          width: 24px;
+          height: 2px;
+        }
+        &::after {
+          bottom: -7px;
+          width: 24px;
+          height: 2px;
+        }
+      }
+    }
+    .SearchBtn {
+      width: 51px;
+      height: 50px;
+      background-size: 42%;
+    }
+  }
+}
+
+@include desktop {
+  .Header {
+    height: 60px;
+    .Logo{
+      width: 91px;
+      height: 35px;
+      background-size: 91px 35px;
+    }
+    .MenuBtn {
+      width: 80px;
+      height: 60px;
+      span {
+        width: 24px;
+        height: 2px;
+        &::before {
+          top: -7px;
+          width: 24px;
+          height: 2px;
+        }
+        &::after {
+          bottom: -7px;
+          width: 24px;
+          height: 2px;
+        }
+      }
+    }
+    .SearchBtn {
+      width: 81px;
+      height: 60px;
+    }
+  }
+}
+

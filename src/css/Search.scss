@@ -1,3 +1,5 @@
+@import './mixin';
+
 .SearchArea {
   .SearchWrap {
     .BackBtn {
@@ -57,23 +59,21 @@
     font-size: 1.2rem;
   }
   .Movie {
-    padding: 10px;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
     .Inner {
-      padding: 10px;
+      position: relative;
       .Movie_Poster {
-        width: 25%;
-        text-align: right;
-        img {
-          width: 95%;
-        }
+        position: absolute;
+        right: 0;
       }
       .Movie_Title {
         padding: 0 0 15px;
         border-bottom: 1px solid #ececec;
-        font-size: 1.4rem;
         color: #000;
         span {
-          font-size: 1rem;
+          display: block;
           font-weight: normal;
           color: #999;
         }
@@ -81,12 +81,11 @@
       .Movie_Info {
         display: flex;
         padding: 15px 0;
-        
         .Movie_Info_List {
-          width: 75%;
+          padding-right: 100px;
+          box-sizing: border-box;
           li {
             margin-top: 10px;
-            font-size: 0.95rem;
             word-break: keep-all;
             > span {
               color: #fd3d46;
@@ -99,11 +98,10 @@
               }
               dt {
                 float: left;
-                width: 52px;
                 color: #999;
               }
               dd {
-                padding-left: 52px;
+                word-break: initial;
                 span {
                   &::before {
                     content: ', '
@@ -117,6 +115,312 @@
               }
             }
             &:first-child{margin-top: 0;}
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .SearchArea {
+    .SearchWrap {
+      .BackBtn {
+        width: 40px;
+        height: 44px;
+        span {
+          position: relative;
+          display: inline-block;
+          width: 21px;
+          height: 3px;
+          background-color: #fff;
+          border-radius: 5px;
+          &:nth-child(1) {
+            transform: rotate(-40deg);
+            top: -4px;
+          }
+          &:nth-child(2) {
+            transform: rotate(40deg);
+            top: 5px;
+          }
+        }
+      }
+      form {
+        display: contents;
+        input[type="text"] {
+          width: 100%;
+          height: 44px;
+          padding: 0 15px;
+          border: none;
+          border-radius: 10px;
+          font-size: 1.2rem;
+        }
+        button {
+          position: absolute;
+          right: 8px;
+          top: 9px;
+          width: 46px;
+          height: 44px;
+          background: url('/img/total_search.png') no-repeat center;
+          background-size: 22px;
+        }
+      }
+      display: flex;
+      padding: 9px 8px 8px 0;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      background-color: #fd3d46;
+      box-sizing: border-box;
+    }
+    .Empty {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 300px;
+      font-size: 1.2rem;
+    }
+    .Movie {
+      padding: 15px;
+      .Inner {
+        position: relative;
+        .Movie_Poster {
+          img {
+            width: 95px;
+          }
+        }
+        .Movie_Title {
+          font-size: 1.4rem;
+          span {
+            font-size: 1rem;
+          }
+        }
+        .Movie_Info {
+          .Movie_Info_List {
+            padding-right: 100px;
+            li {
+              margin-top: 10px;
+              font-size: 0.95rem;
+              > span {
+                color: #fd3d46;
+              }
+              dl {
+                dt {
+                  width: 52px;
+                }
+                dd {
+                  padding-left: 52px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include tablet {
+  .SearchArea {
+    .SearchWrap {
+      .BackBtn {
+        width: 40px;
+        height: 44px;
+        span {
+          position: relative;
+          display: inline-block;
+          width: 21px;
+          height: 3px;
+          background-color: #fff;
+          border-radius: 5px;
+          &:nth-child(1) {
+            transform: rotate(-40deg);
+            top: -4px;
+          }
+          &:nth-child(2) {
+            transform: rotate(40deg);
+            top: 5px;
+          }
+        }
+      }
+      form {
+        display: contents;
+        input[type="text"] {
+          width: 100%;
+          height: 44px;
+          padding: 0 15px;
+          border: none;
+          border-radius: 10px;
+          font-size: 1.2rem;
+        }
+        button {
+          position: absolute;
+          right: 8px;
+          top: 9px;
+          width: 46px;
+          height: 44px;
+          background: url('/img/total_search.png') no-repeat center;
+          background-size: 22px;
+        }
+      }
+      display: flex;
+      padding: 9px 8px 8px 0;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      background-color: #fd3d46;
+      box-sizing: border-box;
+    }
+    .Empty {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 300px;
+      font-size: 1.2rem;
+    }
+    .Movie {
+      padding: 15px;
+      .Inner {
+        position: relative;
+        .Movie_Poster {
+          img {
+            width: 95px;
+          }
+        }
+        .Movie_Title {
+          font-size: 1.4rem;
+          span {
+            font-size: 1rem;
+          }
+        }
+        .Movie_Info {
+          .Movie_Info_List {
+            padding-right: 100px;
+            li {
+              margin-top: 10px;
+              font-size: 0.95rem;
+              > span {
+                color: #fd3d46;
+              }
+              dl {
+                dt {
+                  width: 52px;
+                }
+                dd {
+                  padding-left: 52px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include desktop {
+  .SearchArea {
+    .SearchWrap {
+      .BackBtn {
+        width: 40px;
+        height: 44px;
+        span {
+          position: relative;
+          display: inline-block;
+          width: 21px;
+          height: 3px;
+          background-color: #fff;
+          border-radius: 5px;
+          &:nth-child(1) {
+            transform: rotate(-40deg);
+            top: -4px;
+          }
+          &:nth-child(2) {
+            transform: rotate(40deg);
+            top: 5px;
+          }
+        }
+      }
+      form {
+        display: contents;
+        input[type="text"] {
+          width: 100%;
+          height: 44px;
+          padding: 0 15px;
+          border: none;
+          border-radius: 10px;
+          font-size: 1.2rem;
+        }
+        button {
+          position: absolute;
+          right: 8px;
+          top: 9px;
+          width: 46px;
+          height: 44px;
+          background: url('/img/total_search.png') no-repeat center;
+          background-size: 22px;
+        }
+      }
+      display: flex;
+      padding: 9px 8px 8px 0;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      background-color: #fd3d46;
+      box-sizing: border-box;
+    }
+    .Empty {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 300px;
+      font-size: 1.2rem;
+    }
+    .Movie {
+      padding: 45px 40px;
+      max-width: 1280px;
+      margin: 0 auto;
+      .Inner {
+        padding-right: 290px;
+        .Movie_Poster {
+          position: absolute;
+          right: 0;
+          top: 10px;
+          width: 210px;
+          height: 300px;
+          img {
+            width: 100%;
+          }
+        }
+        .Movie_Title {
+          padding: 0 0 15px;
+          font-size: 3rem;
+          span {
+            padding-top: 10px;
+            font-size: 1.4rem;
+          }
+        }
+        .Movie_Info {
+          padding: 15px 0;
+          .Movie_Info_List {
+            width: 100%;
+            li {
+              font-size: 1.2rem;
+              dl {
+                dt {
+                  width: 82px;
+                  font-size: 1.2rem;
+                }
+                dd {
+                  padding-left: 82px;
+                  font-size: 1.2rem;
+                }
+              }
+              &:first-child{margin-top: 0;}
+            }
           }
         }
       }

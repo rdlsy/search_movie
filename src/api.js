@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const config1 = {
-  API_ENDPOINT: 'http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json',
+  API_ENDPOINT: 'https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json',
   KEY: '664383b11fdaa853a4884a63b0ae7cc4'
 }
 const config2 = {

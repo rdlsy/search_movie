@@ -5,17 +5,11 @@ const config1 = {
   KEY: '664383b11fdaa853a4884a63b0ae7cc4'
 }
 const config2 = {
-  API_ENDPOINT: 'http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2',
+  API_ENDPOINT: 'http://api.koreafilm.or.kr:80/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2',
   KEY: '229UV0UP2N545R3W7SN2'
 }
 const config3 = {
   API_ENDPOINT: 'https://www.filecity.co.kr/module/top100_test.php'
-}
-
-const config4 = {
-  API_ENDPOINT: '/v1/search/movie.json',
-  ID_KEY: 'EgjFJMrWyacJbfqSAok0',
-  SECRET_KEY: 'QVIHlzP0Ba'
 }
 
 let today = new Date();
@@ -70,23 +64,6 @@ const request2 = async (url, form) => {
   }
 }
 
-const request3 = async (url, id_key, secret_key, title) => {
-  const { data: {
-    items
-  } } = await axios.get(url, {
-    params: {
-      query: title,
-      display: 20
-    },
-    headers: {
-      'X-Naver-Client-Id': id_key,
-      'X-Naver-Client-Secret': secret_key
-    }
-  });
-  console.log(items)
-  return items;
-}
-
 const api = {
   //실시간 랭킹 (일별 박스오피스)
   fetchData: () => {
@@ -99,10 +76,6 @@ const api = {
   //실시간 랭킹 (파일시티)
   fetchRankCity: () => {
     return request2(`${config3.API_ENDPOINT}`, formData);
-  },
-  //통합검색(네이버)
-  fetchMovie: (title) => {
-    return request3(config4.API_ENDPOINT, config4.ID_KEY, config4.SECRET_KEY, title)
   }
 }
 

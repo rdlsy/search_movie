@@ -12,6 +12,10 @@ const config3 = {
   API_ENDPOINT: 'https://www.filecity.co.kr/module/top100_test.php'
 }
 
+const config4 = {
+  API_ENDPOINT: 'https://openapi.naver.com/v1/search/movie.json'
+}
+
 let today = new Date();
 
 const setDate = (targetDate) => {
@@ -76,6 +80,10 @@ const api = {
   //실시간 랭킹 (파일시티)
   fetchRankCity: () => {
     return request2(`${config3.API_ENDPOINT}`, formData);
+  },
+  //통합검색(네이버)
+  fetchMovie: (name) => {
+    return request(`${config4.API_ENDPOINT}?query=${name}&display=10`)
   }
 }
 

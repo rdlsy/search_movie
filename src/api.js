@@ -13,7 +13,9 @@ const config3 = {
 }
 
 const config4 = {
-  API_ENDPOINT: 'https://openapi.naver.com/v1/search/movie.json'
+  API_ENDPOINT: '/v1/search/movie.json',
+  ID_KEY: 'EgjFJMrWyacJbfqSAok0',
+  SECRET_KEY: 'QVIHlzP0Ba'
 }
 
 let today = new Date();
@@ -68,6 +70,23 @@ const request2 = async (url, form) => {
   }
 }
 
+const request3 = async (url, id_key, secret_key, title) => {
+  const { data: {
+    items
+  } } = await axios.get(url, {
+    params: {
+      query: title,
+      display: 20
+    },
+    headers: {
+      'X-Naver-Client-Id': id_key,
+      'X-Naver-Client-Secret': secret_key
+    }
+  });
+  console.log(items)
+  return items;
+}
+
 const api = {
   //실시간 랭킹 (일별 박스오피스)
   fetchData: () => {
@@ -82,8 +101,8 @@ const api = {
     return request2(`${config3.API_ENDPOINT}`, formData);
   },
   //통합검색(네이버)
-  fetchMovie: (name) => {
-    return request(`${config4.API_ENDPOINT}?query=${name}&display=10`)
+  fetchMovie: (title) => {
+    return request3(config4.API_ENDPOINT, config4.ID_KEY, config4.SECRET_KEY, title)
   }
 }
 

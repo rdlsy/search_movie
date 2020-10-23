@@ -3,11 +3,18 @@ import { useAsync } from 'react-async';
 import SearchResultItem from './SearchResultItem';
 import api from '../api';
 
+// async function getMovies({ movie }) {
+//   const response = await api.fetchPoster(movie);
+//   let result = response.data;
+//   return result;
+// }
+
 async function getMovies({ movie }) {
   const response = await api.fetchPoster(movie);
   let result = response.data;
   return result;
 }
+
 
 function SearchResult({ movie }) {
   const { data: movies, error, isLoading } = useAsync({

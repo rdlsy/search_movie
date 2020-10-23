@@ -7,6 +7,7 @@ import '../css/LiveRank.scss';
 async function getRank() {
   const response = await api.fetchData();
   const result = response.data.boxOfficeResult.dailyBoxOfficeList;
+  console.log(response)
   return result;
 }
 

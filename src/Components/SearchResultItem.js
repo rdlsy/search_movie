@@ -1,9 +1,9 @@
 import React from 'react';
 
 function SearchResultItem({ movie }) {
-  const { title, posters, type, nation, runtime, repRlsDate, titleEng, prodYear, rating, company, director, actor, stlls } = movie;
+  const { title, posters, type, nation, runtime, repRlsDate, titleEng, rating, company, director, actor } = movie;
   const poster = posters.split('|')[0];
-  const still = stlls.split('|');
+  //const still = stlls.split('|');
   const directorNm = director[0].directorNm;
   const actors = actor.splice(0, 5);
   //actors = actor.splice(0, 5);

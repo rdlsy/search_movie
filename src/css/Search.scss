@@ -119,6 +119,41 @@
         }
       }
     }
+    .Movie_Stills {
+      padding-top: 100px;
+      .SubTitle {
+        font-size: 1.2rem;
+        color: #000;
+      }
+      .slick-slide {
+        img {
+          width: 100%;
+        }
+      }
+      .slick-prev {
+        background-image: url('/search_movie/img/arrow_left.png');
+        &::before {
+          display: none;
+        }
+      }
+      .slick-next {
+        background-image: url('/search_movie/img/arrow_right.png');
+        &::before {
+          display: none;
+        }
+      }
+      .slick-prev, .slick-next {
+        background-color: rgba(0,0,0,.7);
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 50%;
+        z-index: 1;
+      }
+      .slick-slide {
+        padding: 10px;
+        box-sizing: border-box;
+      }
+    }
   }
 }
 
@@ -215,6 +250,12 @@
               }
             }
           }
+        }
+      }
+      .Movie_Stills {
+        padding-top: 30px;
+        .slick-prev, .slick-next {
+          display: none !important;
         }
       }
     }
@@ -314,6 +355,12 @@
               }
             }
           }
+        }
+      }
+      .Movie_Stills {
+        padding-top: 50px;
+        .slick-prev, .slick-next {
+          display: none !important;
         }
       }
     }
@@ -422,6 +469,19 @@
               &:first-child{margin-top: 0;}
             }
           }
+        }
+      }
+      .Movie_Stills {
+        .slick-prev {
+          left: -80px;
+        }
+        .slick-next {
+          right: -80px;
+        }
+        .slick-prev, .slick-next {
+          width: 55px;
+          height: 55px;
+          background-size: 15px;
         }
       }
     }

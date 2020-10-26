@@ -10,7 +10,7 @@ import api from '../api';
 // }
 
 async function getMovies({ movie }) {
-  const response = await api.fetchPoster(movie);
+  const response = await api.fetchPoster2(movie);
   let result = response.data;
   return result;
 }

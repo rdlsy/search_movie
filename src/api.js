@@ -12,6 +12,10 @@ const config3 = {
   API_ENDPOINT: 'https://www.filecity.co.kr/module/top100_test.php'
 }
 
+const config4 = {
+  API_ENDPOINT: 'https://www.filecity.co.kr/hoonmin/koreafilm_api.php',
+}
+
 let today = new Date();
 
 const setDate = (targetDate) => {
@@ -76,7 +80,11 @@ const api = {
   //실시간 랭킹 (파일시티)
   fetchRankCity: () => {
     return request2(`${config3.API_ENDPOINT}`, formData);
-  }
+  },
+  //통합검색2
+  fetchPoster2: (name) => {
+    return request(`${config4.API_ENDPOINT}?title=${name}`)
+  },
 }
 
 export default api;

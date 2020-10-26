@@ -27,14 +27,14 @@ function SearchResult({ movie }) {
   if (error) return <div>에러가 발생했습니다</div>;
 
   return (
-    <>
+    <div className="SearchResult">
       {
         (movies.Data[0].TotalCount === 0) ? <div className="Empty">검색결과 없음</div> :
           movies.Data[0].Result.map((movie, index) => (
             <SearchResultItem key={index} movie={movie} />
           ))
       }
-    </>
+    </div>
   );
 }
 

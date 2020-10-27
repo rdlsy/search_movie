@@ -19,7 +19,7 @@ function LiveRank({ history }) {
 
   return (
     <article className="LiveRank">
-      <div className="inner">
+      <div className="Inner">
         <h2 className="SubTitle">실시간랭킹 <span>(일별 박스오피스)</span></h2>
         <div className="LiveRankWrap">
           {

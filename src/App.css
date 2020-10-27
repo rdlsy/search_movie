@@ -36,6 +36,8 @@ button:focus, select:focus{outline: none;}
 button span{position: relative;}
 select::-ms-expand{display: none;}
 
+.App {overflow-x: hidden;}
+
 .Loading {position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);display: flex;width: 84px;height: 20px;text-align: center;justify-content: center;align-items: center;}
 .Loading span{position: absolute;display: block;margin: 0 5px;display: inline-block;width: 20px;height: 20px;border-radius: 50%;}
 .Loading span.l1{left: 0;background-color: #f8b26a;animation: loading1 0.8s linear infinite;}

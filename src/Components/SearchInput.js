@@ -14,6 +14,7 @@ function SearchInput({ onInsert, history, query }) {
       e.preventDefault();
       if (value) {
         onInsert(value);
+        history.push(`/search?title=${value}`)
       }
     }, [onInsert, value]
   );

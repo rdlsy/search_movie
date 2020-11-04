@@ -16,7 +16,7 @@ function SearchInput({ onInsert, history, query }) {
         onInsert(value);
         history.push(`/search?title=${value}`)
       }
-    }, [onInsert, value]
+    }, [onInsert, history, value]
   );
   const goHome = () => {
     history.push('/')

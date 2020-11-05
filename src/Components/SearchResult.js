@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAsync } from 'react-async';
 import SearchResultItem from './SearchResultItem';
-import api from '../api';
+import api from '../lib/api';
 
 // async function getMovies({ movie }) {
 //   const response = await api.fetchPoster(movie);

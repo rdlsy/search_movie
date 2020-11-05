@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Main from './Components/Main';
-import Search from './Components/Search';
+import Main from './pages/Main';
+import Search from './components/Search';
 import './App.css';
 
 function App() {

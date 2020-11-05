@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAsync } from 'react-async';
-import api from '../api';
+import api from '../lib/api';
 import SliderList from './SliderList';
 import '../css/Slider.scss';
 

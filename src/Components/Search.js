@@ -23,8 +23,8 @@ function Search({ location, history }) {
   return (
     <section className="SearchArea">
       <SearchInput onInsert={onInsert} history={history} query={query} />
-      {(movie) ?
-        <SearchResult movie={movie} /> : ''
+      {(movie) &&
+        <SearchResult movie={movie} />
       }
     </section>
   );
